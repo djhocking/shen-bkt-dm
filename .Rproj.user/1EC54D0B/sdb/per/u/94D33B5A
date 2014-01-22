@@ -1,0 +1,16 @@
+{
+    "contents" : "\nricker = function(x, a = 1, b = 0.0075) {\n  a * x * exp(-b * x)\n}\n\nlricker = function(x, a = 1, b = 0.0075) {\n  a - b * x\n}\n\nN.a <- seq(from = 0, to = 300, by = 1)\nlyvals = sapply(N.a, lricker, a = 1, b = 0.0075)\nN2 <- NULL\nfor(i in 1:length(lyvals)) {\n  N2[i] <- rpois(1, N.a[i]*exp(lyvals[i]))\n}\nN2\n\ndf <- data.frame(N.a, lyvals, N2)\ndf\nggplot(data = df, aes(N.a, exp(lyvals)*N.a)) + geom_line() + labs(x = \"Adult N previous yr\", y = \"YOY produced\")\n\nggplot(data = df, aes(N.a, exp(lyvals))) + geom_line() + labs(x = \"Adult N previous yr\", y = \"YOY produced per capita\")\n\n# survival\ndf$S <- 0.3190*N2 + 0.4526*N.a\n\nggplot(data = df, aes(N.a + N2, S + N2)) + geom_line() + labs(x = \"Adult N previous yr\", y = \"YOY produced per capita\")\n\nggplot(data = df, aes(N2, S)) + geom_line() + labs(x = \"Adult N previous yr\", y = \"YOY produced per capita\")\n\nggplot(data = df, aes(N.a + N2, exp(lyvals)*N.a)) + geom_line(aes(N.a + N2, exp(lyvals)*N.a), colour = \"gray\") + geom_line(aes(N.a + N2, S), colour = \"gray\") + labs(x = \"Adult N previous yr\", y = \"YOY produced\") + geom_abline(colour = \"red\") + geom_line(aes(N.a + N2, exp(lyvals)*N.a + S))\n",
+    "created" : 1389898732339.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1482553887",
+    "id" : "94D33B5A",
+    "lastKnownWriteTime" : 1389892470,
+    "path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

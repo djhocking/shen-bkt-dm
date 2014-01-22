@@ -1,0 +1,15 @@
+{
+    "contents" : "**Yoichiro Kanno**\n\nThese are models, and data & outputs of the Shenandoah abundance model.\n\nUse the “Call Shen Dail Madsen model ver 6.8.Rmd” to run the model “Shen Dail Madsen model ver 6.8.Rmd”. The input and output file is in the RData file.\n\nI also attached a file which gives you an idea on what I did in simulations. Here is an example of two extreme years (both fall and winter are bad) followed by three average years. Right around lines 35-36 show how the extreme years were defined (1.5*SD from the mean).\n\nI started writing a manuscript, half way through Statistical Analysis (ignore Abstract, and old figures have been used for place holders). This is also attached (the Word file) in case you want to know data sources (fish, temp, flow). I will work on the manuscript this week before classes start next week; my realistic goal is to send the first draft to you all in 1-2 months.\n\n",
+    "created" : 1389892686009.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3223815718",
+    "id" : "742A75CD",
+    "lastKnownWriteTime" : 1389892470,
+    "path" : "~/Documents/Research/Stream_Climate_Change/Kanno_Brook_Trout/README.Rmd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}
